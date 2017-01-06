@@ -86,7 +86,7 @@
   when: tripleo
 
 - name: Move files to correct location
-  command: mv {{ home_dir }}/{{item}} {{ browbeat_path }}/ansible/{{item}}
+  command: mv {{ home_dir }}/{{item}} {{ browbeat_path }}/ansible/{{item}} creates={{ browbeat_path }}/ansible/{{item}}
   with_items:
     - hosts
     - heat-admin-id_rsa
